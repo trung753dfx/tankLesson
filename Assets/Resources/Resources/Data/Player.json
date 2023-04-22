@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "UIPathThan": "Tanks/tankRed_outline",
+            "hp": 100,
+            "damage": 10
+        },
+        {
+            "UIPathThan": "Tanks/tankBlue_outline",
+            "hp": 200,
+            "damage": 11
+        },
+        {
+            "UIPathThan": "Tanks/tankBlack_outline",
+            "hp": 210,
+            "damage": 15
+        }
+    ]
+}

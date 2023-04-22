@@ -1,0 +1,26 @@
+{
+    "data": {
+        "ItemHP": {
+            "UIPath": "Items/pt1",
+            "HPPlus": 30
+        },
+        "ItemDamge": {
+            "UIPath": "Items/pt2",
+            "Damage": 20,
+            "TimeEffect": 5.0
+        },
+        "ItemSpeed": {
+            "UIPath": "Items/pt3",
+            "Speed": 10,
+            "TimeEffect": 5.0
+        },
+        "ItemPower": {
+            "UIPath": "Items/pt4",
+            "HPPlus": 50,
+            "Damage": 30,
+            "Speed": 20,
+            "TimeEffect": 10.0
+        }
+
+    }
+}
