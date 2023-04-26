@@ -228,9 +228,10 @@ MonoBehaviour:
   speed: 1
   bodyTank: {fileID: 4411352066893323706}
   gun: {fileID: 4411352067676666802}
-  bullet: {fileID: 3274332558480123516, guid: e97f052466c87104ba58d9184cd0545a, type: 3}
+  bullet: {fileID: 3274332558480123517, guid: e97f052466c87104ba58d9184cd0545a, type: 3}
   transhoot: {fileID: 4411352068285600378}
-  Player: {fileID: 8226922271734218070, guid: 1ec757b4f6cdc8248a65d10efc5448f7, type: 3}
+  hp: 100
+  level: 0
 --- !u!1 &4411352067676666803
 GameObject:
   m_ObjectHideFlags: 0

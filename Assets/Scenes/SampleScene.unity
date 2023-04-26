@@ -786,9 +786,10 @@ MonoBehaviour:
   speed: 1
   bodyTank: {fileID: 1276697925}
   gun: {fileID: 524893005}
-  bullet: {fileID: 3274332558480123516, guid: e97f052466c87104ba58d9184cd0545a, type: 3}
+  bullet: {fileID: 3274332558480123517, guid: e97f052466c87104ba58d9184cd0545a, type: 3}
   transhoot: {fileID: 589124229}
-  Player: {fileID: 8226922271182455756}
+  hp: 50
+  level: 0
 --- !u!50 &1276697922
 Rigidbody2D:
   serializedVersion: 4
@@ -1109,7 +1110,7 @@ GameObject:
   - component: {fileID: 8226922271182455757}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: playerBullet
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1129,8 +1130,10 @@ MonoBehaviour:
   speed: 2
   bodyTank: {fileID: 8226922271182455753}
   gun: {fileID: 8226922272054106640}
-  bullet: {fileID: 3274332558480123516, guid: e97f052466c87104ba58d9184cd0545a, type: 3}
+  bullet: {fileID: 3274332558480123517, guid: e97f052466c87104ba58d9184cd0545a, type: 3}
   transhoot: {fileID: 8226922271452618269}
+  hp: 100
+  level: 1
 --- !u!1 &8226922271452618268
 GameObject:
   m_ObjectHideFlags: 0

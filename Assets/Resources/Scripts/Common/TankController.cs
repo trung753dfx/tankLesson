@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LTAUnityBase.Base.DesignPattern;
 
 public class TankController : MoveController
 {
     public Transform bodyTank;
     public Transform gun;
-    public GameObject bullet;
+    public BulletController bullet;
     public Transform transhoot;
+    public float hp;
+    public float level;
 
     protected override void Move(Vector3 direction)
     {
@@ -29,53 +32,15 @@ public class TankController : MoveController
         nametag.transform.tag = this.gameObject.transform.tag;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void DestroyWhenOutOfHP()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector3 direction = new Vector3(horizontal, vertical);
-
-        if(direction != Vector3.zero)
+        if (hp <= 0)
         {
-            this.gameObject.transform.up = direction;
-        }
-
-        bodyTank.transform.position += direction * Time.deltaTime * speed;
-
-        Vector3 gunDirection = new Vector3(
-            Input.mousePosition.x - Screen.width / 2,
-            Input.mousePosition.y - Screen.width / 2
-            );
-
-        gun.transform.up = gunDirection;
-        //gun2.transform.up = gunDirection;
-
-        if (Input.GetMouseButton(0))
-        {
-            /*if(Instantiate(bullet, transhoot.transform.position, transhoot.transform.rotation))
-            {
-                //Instantiate(bullet1, transhoot2.transform.position, transhoot2.transform.rotation);
-                //Instantiate(bullet1, transhoot3.transform.position, transhoot2.transform.rotation);
-                //Instantiate(bullet1, transhoot4.transform.position, transhoot2.transform.rotation);
-            }*/
-            var playerBullet = Instantiate(bullet, transhoot.transform.position, transhoot.transform.rotation);
-            playerBullet.transform.tag = "playerBullet";
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.gameObject.CompareTag("enemyBullet"))
-        {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
+            gameManager.Instance.genEnemyTank();
+            gameManager.Instance.addScore();
         }
     }
 }
-
 //Unity co 2 loai Script: minh dinh nghia va unity dinh nghia
 //+= tịnh tiến

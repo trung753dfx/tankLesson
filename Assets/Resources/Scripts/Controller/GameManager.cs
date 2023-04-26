@@ -11,21 +11,21 @@ public class GameManager : MonoBehaviour
     public Text scoreTxt;
 
     // Update is called once per frame
-
+    
     private void Awake()
     {
-        Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, addScore);
-        Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, genEnemyTank);
+        //Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, addScore);
+        //Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, genEnemyTank);
     }
     private void Update()
     {
         scoreTxt.text = "Score : " + scorePlayer.ToString();
     }
-    public void addScore(object data)
+    public void addScore(/*object data*/)
     {
         scorePlayer += 10;
     }
-    public void genEnemyTank(object data)
+    public void genEnemyTank()
     {
         Instantiate(tankEnemy, gameManager.Instance.transform.position, gameManager.Instance.transform.rotation);
         Instantiate(tankEnemy, gameManager.Instance.transform.position + Vector3.up, gameManager.Instance.transform.rotation);
