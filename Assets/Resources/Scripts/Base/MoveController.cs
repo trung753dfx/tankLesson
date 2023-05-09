@@ -11,8 +11,6 @@ public class MoveController : MonoBehaviour
     }
 }
 
-//Lam bai hinh vuong la hinh tam giac, xoay truc Z khi di chuyen
-//Ban mot tank sinh hai tank
 //hoc tiep SO-(LID)
 //nghien cuu pooling object (design patern)
 //on lai kien thuc cu (buoi hom nay)

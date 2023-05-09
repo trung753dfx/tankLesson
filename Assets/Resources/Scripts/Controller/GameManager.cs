@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using LTAUnityBase.Base.DesignPattern;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     public EnemyController tankEnemy;
     public int scorePlayer;
     public Text scoreTxt;
-
-    // Update is called once per frame
     
     private void Awake()
     {
         //Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, addScore);
         //Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, genEnemyTank);
+        this.RegisterListener(EventID.EnemyDestroy, (sender, param) =>
+         {
+             addScore();
+             //genEnemyTank();
+         });
     }
+
     private void Update()
     {
         scoreTxt.text = "Score : " + scorePlayer.ToString();
     }
-    public void addScore(/*object data*/)
+    public void addScore()
     {
         scorePlayer += 10;
     }
@@ -46,7 +51,3 @@ public class gameManager : SingletonMonoBehaviour<GameManager>
 //Doc va phan tich diem chung
 //Diem chung day thi viet 1 class
 //Nhung class con ke thua class tren
-
-
-//Nghien cuu them observer
-//btvn ghep UI

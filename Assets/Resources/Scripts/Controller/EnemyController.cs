@@ -22,6 +22,12 @@ public class EnemyController : TankController
         }
         //Destroy khi het HP
         DestroyWhenOutOfHP();
+        if (hp <= 0)
+        {
+            Destroy(this.gameObject);
+            Debug.LogError("dich chet roi");
+            this.PostEvent(EventID.EnemyDestroy, level); //GUI THONG TIN
+        }
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,7 +35,8 @@ public class EnemyController : TankController
         if (collision.transform.gameObject.CompareTag("Player"))
         {
             hp = bullet.CalculateHP(hp, level);
-            DestroyWhenOutOfHP();
+            //Destroy(this.bullet);
+            Instantiate(bullet.explosion, gameObject.transform.position, gameObject.transform.rotation);
         }    
     }
 }

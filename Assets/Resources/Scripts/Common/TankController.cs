@@ -36,8 +36,8 @@ public class TankController : MoveController
     {
         if (hp <= 0)
         {
-            Destroy(this.gameObject);
-            gameManager.Instance.genEnemyTank();
+            //Destroy(this.gameObject);
+            //gameManager.Instance.genEnemyTank();
             gameManager.Instance.addScore();
         }
     }
