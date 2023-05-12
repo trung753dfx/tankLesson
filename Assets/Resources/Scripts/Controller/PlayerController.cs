@@ -7,8 +7,10 @@ using LTAUnityBase.Base.DesignPattern;
 public class PlayerController : TankController
 {
     public Slider slider_hp;
-    public Text levelTxt;
     public GameObject hpPoint;
+    public Text levelTxt;
+    public GameObject levelPoint;
+    public Slider slider_level;
     private void Awake()
     {
         slider_hp.maxValue = hp;
