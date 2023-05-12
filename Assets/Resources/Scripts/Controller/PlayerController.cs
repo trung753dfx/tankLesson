@@ -40,7 +40,6 @@ public class PlayerController : TankController
             Shoot();
         }
         DestroyWhenOutOfHP();
-        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
