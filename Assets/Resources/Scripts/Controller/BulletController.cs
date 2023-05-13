@@ -25,8 +25,12 @@ public class BulletController : MoveController
         var hpLeft = hp - (level + damage);
         return hpLeft;
     }
-    public void DestroyWhenImpact()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.transform.gameObject.tag != this.gameObject.tag)
+        {
+            //Destroy(this.gameObject);
+            Instantiate(this.explosion, gameObject.transform.position, gameObject.transform.rotation);
+        }
     }
 }
