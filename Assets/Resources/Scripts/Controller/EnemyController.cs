@@ -25,19 +25,9 @@ public class EnemyController : TankController
         if (hp <= 0)
         {
             Destroy(this.gameObject);
-            Debug.LogError("dich chet roi");
+            //Debug.LogError("dich chet roi");
             this.PostEvent(EventID.EnemyDestroy, level); //GUI THONG TIN
         }
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.gameObject.CompareTag("Player"))
-        {
-            hp = bullet.CalculateHP(hp, level);
-            //Destroy(this.bullet);
-            Instantiate(bullet.explosion, gameObject.transform.position, gameObject.transform.rotation);
-        }    
     }
 }
 //tim hieu OOP, nam duoc 4 thuoc tinh

@@ -25,4 +25,8 @@ public class BulletController : MoveController
         var hpLeft = hp - (level + damage);
         return hpLeft;
     }
+    public void DestroyWhenImpact()
+    {
+
+    }
 }

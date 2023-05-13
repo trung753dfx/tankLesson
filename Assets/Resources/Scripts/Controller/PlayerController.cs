@@ -42,15 +42,6 @@ public class PlayerController : TankController
         DestroyWhenOutOfHP();
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.gameObject.CompareTag("enemyBullet"))
-        {
-            hp = bullet.CalculateHP(hp, level);
-            //Destroy(this.bullet);
-            Instantiate(bullet.explosion, gameObject.transform.position, gameObject.transform.rotation);
-        }
-    }
 }
     
 public class Player : SingletonMonoBehaviour<PlayerController>
