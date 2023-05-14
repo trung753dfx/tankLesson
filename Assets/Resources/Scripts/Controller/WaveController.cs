@@ -8,6 +8,8 @@ public class WaveController : MonoBehaviour
     public EnemyController enemySample;
     [SerializeField] private Transform[] _gate;
     private int _enemyInWave = 0;
+    public GameObject heal;
+    public GameObject boostDamage;
 
     // Start is called before the first frame update
     private void Start()
@@ -22,12 +24,12 @@ public class WaveController : MonoBehaviour
 
     public void CreateWave()
     {
-        for (int i=0; i< _tankEnemy.Count; i++)
-        {
-            var enemy = _tankEnemy[i];
-            var gate = Random.Range(0, _gate.Length);
-            Instantiate(enemy, _gate[gate].position, _gate[gate].rotation);
-        }
+            for (int i = 0; i < _tankEnemy.Count; i++)
+            {
+                var enemy = _tankEnemy[i];
+                var gate = Random.Range(0, _gate.Length-1);
+                Instantiate(enemy, _gate[gate].position, _gate[gate].rotation);
+            }
     }
 
     public void CalculateWave()
@@ -40,11 +42,16 @@ public class WaveController : MonoBehaviour
             {
                 _tankEnemy.Add(enemySample);
                 CreateWave();
+                var oddGate = Random.Range(0, _gate.Length);
+                var evenGate = Random.Range(1, _gate.Length / 2);
+                Instantiate(heal, _gate[oddGate].position, _gate[oddGate].rotation);
+                Instantiate(boostDamage, _gate[evenGate].position, _gate[evenGate].rotation);
             }
             else
             {
                 CreateWave();
                 _enemyInWave = 0;
+                
             }
         }
     }
@@ -52,7 +59,7 @@ public class WaveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
 

@@ -29,7 +29,7 @@ public class BulletController : MoveController
     {
         if (collision.transform.gameObject.tag != this.gameObject.tag)
         {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
             Instantiate(this.explosion, gameObject.transform.position, gameObject.transform.rotation);
         }
     }

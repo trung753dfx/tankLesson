@@ -25,7 +25,7 @@ public class EnemyController : TankController
         if (hp <= 0)
         {
             Destroy(this.gameObject);
-            Debug.LogError("dich chet roi");
+            //Debug.LogError("dich chet roi");
             this.PostEvent(EventID.EnemyDestroy, level); //GUI THONG TIN
         }
 

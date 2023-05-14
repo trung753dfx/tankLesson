@@ -9,9 +9,18 @@ public class PlayerController : TankController
     public Slider slider_hp;
     public Text levelTxt;
     public GameObject hpPoint;
+
+    public Slider slider_exp;
+    public Text expText;
+    public GameObject expPoint;
+
+    int exp = 0;
+    int expToLevelUp = 10;
+
     private void Awake()
     {
         slider_hp.maxValue = hp;
+        slider_exp.maxValue = 100;
     }
 
     void Update()
@@ -25,6 +34,11 @@ public class PlayerController : TankController
         }
         //
 
+        //exp = ;
+
+
+        
+        //
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizontal, vertical);

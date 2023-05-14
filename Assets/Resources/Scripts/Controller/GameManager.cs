@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public EnemyController tankEnemy;
     public int scorePlayer;
     public Text scoreTxt;
+    public Text levelTxt;
+    public int levelPlayer =1;
     
     private void Awake()
     {
@@ -18,23 +20,28 @@ public class GameManager : MonoBehaviour
         this.RegisterListener(EventID.EnemyDestroy, (sender, param) =>
          {
              addScore();
-             //genEnemyTank();
          });
     }
 
     private void Update()
     {
         scoreTxt.text = "Score : " + scorePlayer.ToString();
+        levelTxt.text = "Level: " + levelPlayer.ToString();
     }
     public void addScore()
     {
         scorePlayer += 10;
     }
+    public void addLevel()
+    {
+        levelPlayer += 1;
+    }
     public void genEnemyTank()
     {
         Instantiate(tankEnemy, gameManager.Instance.transform.position, gameManager.Instance.transform.rotation);
-        Instantiate(tankEnemy, gameManager.Instance.transform.position + Vector3.up, gameManager.Instance.transform.rotation);
+        //Instantiate(tankEnemy, gameManager.Instance.transform.position + Vector3.up, gameManager.Instance.transform.rotation);
     }
+    
 }
 public class gameManager : SingletonMonoBehaviour<GameManager>
 {
