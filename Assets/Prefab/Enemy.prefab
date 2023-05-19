@@ -225,13 +225,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d26af88e1f0b747abdbb9738eb4aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
   bodyTank: {fileID: 4411352066893323706}
   gun: {fileID: 4411352067676666802}
   bullet: {fileID: 3274332558480123517, guid: e97f052466c87104ba58d9184cd0545a, type: 3}
   transhoot: {fileID: 4411352068285600378}
   hp: 100
   level: 0
+  bonusDamage: 0
 --- !u!1 &4411352067676666803
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,27 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LTAUnityBase.Base.DesignPattern;
 
 public class BulletController : MoveController
 {
 
-    private float time = 0;
+    public float time = 0;
     public GameObject explosion;
     public float damage;
-
     // Update is called once per frame
     void Update()
     {
         if (time == 200)
         {
-            Destroy(this.gameObject);
+            PoolingObject.DestroyPooling<BulletController>(this);
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
         }
         time++;
         Move(transform.up);
     }
     public virtual float CalculateHP(float hp, float level)
-    {
+    { 
         var hpLeft = hp - (level + damage);
         return hpLeft;
     }
@@ -29,7 +29,7 @@ public class BulletController : MoveController
     {
         if (collision.transform.gameObject.tag != this.gameObject.tag)
         {
-            Destroy(this.gameObject);
+            PoolingObject.DestroyPooling<BulletController>(this);
             Instantiate(this.explosion, gameObject.transform.position, gameObject.transform.rotation);
         }
     }

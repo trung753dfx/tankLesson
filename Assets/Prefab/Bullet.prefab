@@ -99,7 +99,8 @@ MonoBehaviour:
   speed: 1
   explosion: {fileID: 840766991630662738, guid: d2055a9525f5b39468d3aa5a88c7a38f,
     type: 3}
-  damage: 50
+  damage: 10
+  bonusDamage: 0
 --- !u!61 &6857305840114579867
 BoxCollider2D:
   m_ObjectHideFlags: 0

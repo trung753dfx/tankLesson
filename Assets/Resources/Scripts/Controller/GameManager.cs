@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour
     public int scorePlayer;
     public Text scoreTxt;
     public Text levelTxt;
-    public int levelPlayer =1;
-    
+
+    public int pointExp;
+
     private void Awake()
     {
         //Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, addScore);
@@ -26,15 +27,12 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         scoreTxt.text = "Score : " + scorePlayer.ToString();
-        levelTxt.text = "Level: " + levelPlayer.ToString();
+        levelTxt.text = "Level: " + Player.Instance.level.ToString();
     }
     public void addScore()
     {
         scorePlayer += 10;
-    }
-    public void addLevel()
-    {
-        levelPlayer += 1;
+        Player.Instance.currentExp += 1;
     }
     public void genEnemyTank()
     {

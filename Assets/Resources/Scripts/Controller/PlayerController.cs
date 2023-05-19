@@ -14,13 +14,18 @@ public class PlayerController : TankController
     public Text expText;
     public GameObject expPoint;
 
-    int exp = 0;
-    int expToLevelUp = 10;
+    public int currentExp;
+    public int expToLevelUp;
+
+    public float damageBonus;
+
+    public HoiMauController hoiMau;
+    public TangDamage tangDamage;
 
     private void Awake()
     {
         slider_hp.maxValue = hp;
-        slider_exp.maxValue = 100;
+        slider_exp.maxValue = expToLevelUp;
     }
 
     void Update()
@@ -34,9 +39,8 @@ public class PlayerController : TankController
         }
         //
 
-        //exp = ;
-
-
+        slider_exp.value = currentExp;
+        expCalculate();
         
         //
         float horizontal = Input.GetAxis("Horizontal");
@@ -55,6 +59,14 @@ public class PlayerController : TankController
         }
         DestroyWhenOutOfHP();
     }
+    public void expCalculate()
+    {
+        if(currentExp >= expToLevelUp)
+        {
+            currentExp = currentExp - expToLevelUp;
+            level++;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.gameObject.CompareTag("enemyBullet"))
@@ -62,6 +74,17 @@ public class PlayerController : TankController
             hp = bullet.CalculateHP(hp, level);
             //Destroy(this.bullet);
             Instantiate(bullet.explosion, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        if (collision.transform.gameObject.CompareTag("health"))
+        {
+            hp = hoiMau.CalculateHP(hp);
+            Destroy(collision.transform.gameObject);
+        }
+        if (collision.transform.gameObject.CompareTag("tangDamage"))
+        {
+            hp = tangDamage.CalculateHP(hp);
+            damageBonus = tangDamage.CalculateDamage(damageBonus);
+            Destroy(collision.transform.gameObject);
         }
     }
 }

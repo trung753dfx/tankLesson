@@ -34,7 +34,7 @@ public class EnemyController : TankController
     {
         if (collision.transform.gameObject.CompareTag("Player"))
         {
-            hp = bullet.CalculateHP(hp, level);
+            hp = bullet.CalculateHP(hp, level) - Player.Instance.damageBonus;
             //Destroy(this.bullet);
             Instantiate(bullet.explosion, gameObject.transform.position, gameObject.transform.rotation);
         }

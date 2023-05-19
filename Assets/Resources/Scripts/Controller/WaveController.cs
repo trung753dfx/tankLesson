@@ -10,6 +10,7 @@ public class WaveController : MonoBehaviour
     private int _enemyInWave = 0;
     public GameObject heal;
     public GameObject boostDamage;
+    float timer;
 
     // Start is called before the first frame update
     private void Start()
@@ -24,13 +25,14 @@ public class WaveController : MonoBehaviour
 
     public void CreateWave()
     {
-            for (int i = 0; i < _tankEnemy.Count; i++)
-            {
+        for (int i = 0; i < _tankEnemy.Count; i++)
+        {
                 var enemy = _tankEnemy[i];
                 var gate = Random.Range(0, _gate.Length-1);
-                Instantiate(enemy, _gate[gate].position, _gate[gate].rotation);
-            }
-    }
+                Instantiate(enemy, _gate[gate].position, _gate[gate].rotation); 
+        }
+        }
+    
 
     public void CalculateWave()
     {
@@ -41,11 +43,12 @@ public class WaveController : MonoBehaviour
             if (_tankEnemy.Count <= 10)
             {
                 _tankEnemy.Add(enemySample);
-                CreateWave();
-                var oddGate = Random.Range(0, _gate.Length);
-                var evenGate = Random.Range(1, _gate.Length / 2);
-                Instantiate(heal, _gate[oddGate].position, _gate[oddGate].rotation);
-                Instantiate(boostDamage, _gate[evenGate].position, _gate[evenGate].rotation);
+
+                    CreateWave();
+                var gateOdd = Random.Range(1, _gate.Length);
+                var gateEven = Random.Range(0, _gate.Length/2);
+                Instantiate(heal, _gate[gateOdd].position, _gate[gateOdd].rotation);
+                Instantiate(boostDamage, _gate[gateEven].position, _gate[gateEven].rotation);
             }
             else
             {
@@ -59,7 +62,6 @@ public class WaveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 }
 
