@@ -1,0 +1,18 @@
+//thanh level, hien thi slider + text level
+//giet 1 enemy + 1 diem cua 1 level
+//1 level co 10 diem
+//item hoi mau, giam mau
+//giet xong 1 wave co 1 khoang nghi, 
+tao 1 binh mau, 1 binh mau hoi 10 HP 
+va 1 binh -10HP +10 Damage
+
+
+noi suy tuyen tinh giua 2 diem lerp
+
+xac dinh huong cua vecto, vecto sau tru vecto truoc
+
+btvn
+pooling: smoke, enemy, item
+item: tang spd, tang level, 2 nong trong 10s
+
+sua bai plane pooling
