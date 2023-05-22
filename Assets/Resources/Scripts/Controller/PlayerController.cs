@@ -21,6 +21,7 @@ public class PlayerController : TankController
 
     public HoiMauController hoiMau;
     public TangDamage tangDamage;
+    public TangSpd tangSpd;
 
     private void Awake()
     {
@@ -84,6 +85,11 @@ public class PlayerController : TankController
         {
             hp = tangDamage.CalculateHP(hp);
             damageBonus = tangDamage.CalculateDamage(damageBonus);
+            Destroy(collision.transform.gameObject);
+        }
+        if (collision.transform.gameObject.CompareTag("tangSpeed"))
+        {
+            speed = tangSpd.ChangeSpeed(speed);
             Destroy(collision.transform.gameObject);
         }
     }
