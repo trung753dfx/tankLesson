@@ -1690,10 +1690,11 @@ MonoBehaviour:
   expPoint: {fileID: 422158167}
   currentExp: 0
   expToLevelUp: 10
-  bonusDamage: 0
+  damageBonus: 0
   hoiMau: {fileID: 7784988163233149745, guid: 959a0a2fcdaeab343acf7767d2f7e991, type: 3}
   tangDamage: {fileID: 8231292478072278631, guid: d037ff017f0ae154699387cbf6fb3db6,
     type: 3}
+  tangSpd: {fileID: 0}
 --- !u!1 &8226922271452618268
 GameObject:
   m_ObjectHideFlags: 0
