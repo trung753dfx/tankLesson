@@ -16,3 +16,15 @@ pooling: smoke, enemy, item
 item: tang spd, tang level, 2 nong trong 10s
 
 sua bai plane pooling
+
+
+------
+
+chep phat time.deltaTime la 1 frame
+2 loai script unity dinh nghia va minh dinh nghia
+
+
+he thong pooling obj cho item, enemy tank
+thay the he thong ban dan SpaceCraft = pooling obj
+SOLID,OOP,MVC,3 Loai design patern
+nghi skill cho con tank
