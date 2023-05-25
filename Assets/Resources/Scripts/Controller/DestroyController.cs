@@ -8,4 +8,8 @@ public class DestroyController : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+    public void DestroyIceEff()
+    {
+        //Destroy(this.gameObject);
+    }
 }

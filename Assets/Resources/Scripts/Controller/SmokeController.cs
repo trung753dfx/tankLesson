@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LTAUnityBase.Base.DesignPattern;
+using Core.Pool;
 
 public class SmokeController : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class SmokeController : MonoBehaviour
 
     public void DestroySmoke()
     {
-        PoolingObject.DestroyPooling<SmokeController>(this);
+        //PoolingObject.DestroyPooling<SmokeController>(this);
         //Debug.LogError("destroy pooling");
+        SmartPool.Instance.Despawn(this.gameObject);
     }
 }

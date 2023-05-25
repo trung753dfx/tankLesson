@@ -16,7 +16,8 @@ public class BulletController : MoveController
     {
         if (time == 200)
         {
-            PoolingObject.DestroyPooling<BulletController>(this);
+            //PoolingObject.DestroyPooling<BulletController>(this);
+            SmartPool.Instance.Despawn(bullet.gameObject);
             CreateSmoke();
             //Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
         }
@@ -32,7 +33,8 @@ public class BulletController : MoveController
     {
         if (collision.transform.gameObject.tag != this.gameObject.tag)
         {
-            PoolingObject.DestroyPooling<BulletController>(this);
+            //PoolingObject.DestroyPooling<BulletController>(this);
+            SmartPool.Instance.Despawn(bullet.gameObject);
             CreateSmoke();
             //Instantiate(this.explosion, gameObject.transform.position, gameObject.transform.rotation);
         }
@@ -47,5 +49,16 @@ public class BulletController : MoveController
         //}
         //return smokeclone;
         var smokeclone = SmartPool.Instance.Spawn(explosion.gameObject, this.transform.position, this.transform.rotation);
+    }
+
+    protected virtual void BulletEx()
+    {
+        if (time == 30)
+        {
+            SmartPool.Instance.Despawn(this.gameObject);
+            Instantiate(this.gameObject, this.gameObject.transform.position, this.gameObject.transform.rotation);
+
+        }
+        time++;
     }
 }

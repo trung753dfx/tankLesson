@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Pool;
 
 public class WaveController : MonoBehaviour
 {
@@ -29,7 +30,8 @@ public class WaveController : MonoBehaviour
         {
                 var enemy = _tankEnemy[i];
                 var gate = Random.Range(0, _gate.Length-1);
-                Instantiate(enemy, _gate[gate].position, _gate[gate].rotation); 
+            //Instantiate(enemy, _gate[gate].position, _gate[gate].rotation);
+            SmartPool.Instance.Spawn(enemySample.gameObject, _gate[gate].position, _gate[gate].rotation);
         }
         }
     
@@ -47,8 +49,8 @@ public class WaveController : MonoBehaviour
                     CreateWave();
                 var gateOdd = Random.Range(1, _gate.Length);
                 var gateEven = Random.Range(0, _gate.Length/2);
-                Instantiate(heal, _gate[gateOdd].position, _gate[gateOdd].rotation);
-                Instantiate(boostDamage, _gate[gateEven].position, _gate[gateEven].rotation);
+                SmartPool.Instance.Spawn(heal, _gate[gateOdd].position, _gate[gateOdd].rotation);
+                SmartPool.Instance.Spawn(boostDamage, _gate[gateEven].position, _gate[gateEven].rotation);
             }
             else
             {
@@ -59,6 +61,11 @@ public class WaveController : MonoBehaviour
         }
     }
     
+    //public void CreateEnemy()
+    //{
+    //    var enemyclone = SmartPool.Instance.Spawn(enemySample.gameObject, this.transform.position, this.transform.rotation);
+    //}
+
     // Update is called once per frame
     void Update()
     {

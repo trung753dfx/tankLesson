@@ -87,11 +87,11 @@ public class PlayerController : TankController
             damageBonus = tangDamage.CalculateDamage(damageBonus);
             Destroy(collision.transform.gameObject);
         }
-        if (collision.transform.gameObject.CompareTag("tangSpeed"))
-        {
-            speed = tangSpd.ChangeSpeed(speed);
-            Destroy(collision.transform.gameObject);
-        }
+        //if (collision.transform.gameObject.CompareTag("tangSpeed"))
+        //{
+        //    speed = tangSpd.ChangeSpeed(speed);
+        //    Destroy(collision.transform.gameObject);
+        //}
     }
 }
     

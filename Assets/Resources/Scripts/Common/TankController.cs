@@ -49,7 +49,9 @@ public class TankController : MoveController
     }
     public void CreateBullet()
     {
-        var bulletclone = SmartPool.Instance.Spawn(bullet.gameObject, this.transform.position, this.transform.rotation);
+        var bulletclone = SmartPool.Instance.Spawn(bullet.gameObject, transhoot.transform.position, transhoot.transform.rotation);
+        bulletclone.GetComponent<BulletController>().damage += level;
+        bulletclone.GetComponent<BulletController>().tag = this.tag;
     }
 }
 //Unity co 2 loai Script: minh dinh nghia va unity dinh nghia

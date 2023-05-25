@@ -1678,7 +1678,7 @@ MonoBehaviour:
   speed: 2
   bodyTank: {fileID: 8226922271182455753}
   gun: {fileID: 8226922272054106640}
-  bullet: {fileID: 3274332558480123517, guid: e97f052466c87104ba58d9184cd0545a, type: 3}
+  bullet: {fileID: 3274332558480123517, guid: 5f168f321f8b71b4f8ee42c9627f2c84, type: 3}
   transhoot: {fileID: 8226922271452618269}
   hp: 100
   level: 1
@@ -1719,7 +1719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8226922271452618268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: 0.899, z: 0}
+  m_LocalPosition: {x: -0.002, y: 0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8226922272054106640}
