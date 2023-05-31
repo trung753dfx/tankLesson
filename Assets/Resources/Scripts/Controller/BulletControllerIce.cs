@@ -27,8 +27,8 @@ public class BulletControllerIce : BulletController, IceSkill
     {
         if (time == 300)
         {
-            //SmartPool.Instance.Spawn(prebIce, this.gameObject.transform.position, this.gameObject.transform.rotation);
-            Instantiate(prebIce, this.gameObject.transform.position, this.gameObject.transform.rotation);
+            SmartPool.Instance.Spawn(prebIce, this.gameObject.transform.position, this.gameObject.transform.rotation);
+            //Instantiate(prebIce, this.gameObject.transform.position, this.gameObject.transform.rotation);
 
         }
         base.BulletEx();

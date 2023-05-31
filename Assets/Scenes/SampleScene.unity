@@ -1678,7 +1678,7 @@ MonoBehaviour:
   speed: 2
   bodyTank: {fileID: 8226922271182455753}
   gun: {fileID: 8226922272054106640}
-  bullet: {fileID: 3274332558480123517, guid: 5f168f321f8b71b4f8ee42c9627f2c84, type: 3}
+  bullet: {fileID: -8134998241278138058, guid: 5f168f321f8b71b4f8ee42c9627f2c84, type: 3}
   transhoot: {fileID: 8226922271452618269}
   hp: 100
   level: 1

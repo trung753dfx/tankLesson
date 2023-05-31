@@ -14,11 +14,11 @@ public class BulletController : MoveController
     // Update is called once per frame
     public void Update()
     {
-        if (time == 200)
+        if (time == 500)
         {
             //PoolingObject.DestroyPooling<BulletController>(this);
             SmartPool.Instance.Despawn(bullet.gameObject);
-            CreateSmoke();
+            //CreateSmoke();
             //Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
         }
         time++;
@@ -34,8 +34,8 @@ public class BulletController : MoveController
         if (collision.transform.gameObject.tag != this.gameObject.tag)
         {
             //PoolingObject.DestroyPooling<BulletController>(this);
-            SmartPool.Instance.Despawn(bullet.gameObject);
-            CreateSmoke();
+            SmartPool.Instance.Despawn(this.gameObject);
+            //CreateSmoke();
             //Instantiate(this.explosion, gameObject.transform.position, gameObject.transform.rotation);
         }
     }
@@ -57,7 +57,6 @@ public class BulletController : MoveController
         {
             SmartPool.Instance.Despawn(this.gameObject);
             Instantiate(this.gameObject, this.gameObject.transform.position, this.gameObject.transform.rotation);
-
         }
         time++;
     }
